@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iTrans Logistics Ltd | Global Shipping & Freight</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    color:#333;
+    background:#f5f7fb;
+}
+
+/* NAVIGATION */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+    background:#0b3d91;
+    color:white;
+    flex-wrap:wrap;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:15px;
+}
+
+/* HERO */
+.hero{
+    min-height:90vh;
+    background:
+    linear-gradient(rgba(11,61,145,0.85), rgba(11,61,145,0.85)),
+    url('https://images.unsplash.com/photo-1581093588401-16a5b0b4b0b3?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.section{
+    padding:70px 5%;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:30px;
+}
+
+.service-box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+/* TRACKING */
+.tracking {
+    background: #0b3d91;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.tracking-box {
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+}
+
+.tracking-box h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.tracking-form {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tracking-form input {
+    flex: 1;
+    min-width: 250px;
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+}
+
+.tracking-form button {
+    padding: 14px 30px;
+    border-radius: 6px;
+    border: none;
+    background: white;
+    color: #0b3d91;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* CONTACT */
+.contact{
+    background:#ffffff;
+}
+
+.contact-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.contact-info{
+    flex:1;
+    min-width:280px;
+}
+
+.contact-form{
+    flex:1;
+    min-width:280px;
+}
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.contact-form button{
+    background:#0b3d91;
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+footer{
+    background:#0b3d91;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>iTrans Logistics Ltd</h2>
+    <ul>
+        <li>Home</li>
+        <li>Services</li>
+        <li>Tracking</li>
+        <li>Contact</li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Global Freight & Logistics Solutions</h1>
+        <p>Reliable • Secure • Fast International Shipping</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2 style="text-align:center;margin-bottom:40px;">Our Services</h2>
+    <div class="services">
+        <div class="service-box"><h3>Air Freight</h3></div>
+        <div class="service-box"><h3>Sea Freight</h3></div>
+        <div class="service-box"><h3>Land Transport</h3></div>
+        <div class="service-box"><h3>Customs Clearance</h3></div>
+    </div>
+</section>
+
+<section class="tracking">
+  <div class="tracking-box">
+    <h2>Track Your Shipment</h2>
+    <div class="tracking-form">
+      <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
+      <button onclick="trackShipment()">Track</button>
+    </div>
+    <div id="trackingResult"></div>
+  </div>
+</section>
+
+<section class="section contact">
+    <h2 style="text-align:center;margin-bottom:40px;">Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Head Office</h3>
+            <p>Jerusalem, Israel</p>
+            <p><strong>Email:</strong> itranslogisticltd@email.com</p>
+            <p><strong>Business Hours:</strong><br>
+            Monday – Saturday<br>
+            8:00 AM – 6:00 PM</p>
+        </div>
+
+        <div class="contact-form">
+            <form action="https://formspree.io/f/xjgednvj" method="POST" id="contactForm">
+                <input type="hidden" name="_subject" value="New Message from iTrans Website">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" id="submitBtn">Send Message</button>
+                <p id="successMessage" style="display:none; color:green;">Message sent successfully!</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 iTrans Logistics Ltd. All Rights Reserved.
+</footer>
+
+<script>
+function trackShipment() {
+  const trackingNumber = document.getElementById("trackingInput").value.trim().toUpperCase();
+  const resultDiv = document.getElementById("trackingResult");
+
+  if (!trackingNumber) {
+    resultDiv.innerHTML = "<p style='color:red;'>Please enter a tracking number.</p>";
+    return;
+  }
+
+  const shipments = {
+    "ITL987654": {
+      status: "Held at Customs",
+      destination: "Kuwait",
+      updates: [
+        "Package received at origin facility – Lagos, Nigeria",
+        "Departed international airport – Lagos",
+        "Arrived at Kuwait International Airport",
+        "Held at customs for inspection"
+      ]
+    },
+    "ITL123456": {
+      status: "In Transit",
+      destination: "Abuja, Nigeria",
+      updates: [
+        "Shipment picked up",
+        "Arrived at sorting facility – Lagos",
+        "Dispatched to Abuja",
+        "Out for delivery"
+      ]
+    }
+  };
+
+  if (shipments[trackingNumber]) {
+    const shipment = shipments[trackingNumber];
+
+    let updatesHTML = "";
+    shipment.updates.forEach(update => {
+      updatesHTML += `<li style="margin-bottom:8px;">✔ ${update}</li>`;
+    });
+
+    resultDiv.innerHTML = `
+      <div style="background:#fff; padding:25px; margin-top:25px; border-radius:10px; text-align:left;">
+        <h3 style="color:#0b3d91;">Tracking Number: ${trackingNumber}</h3>
+        <p><strong>Status:</strong> ${shipment.status}</p>
+        <p><strong>Destination:</strong> ${shipment.destination}</p>
+        <hr style="margin:15px 0;">
+        <h4>Shipment History</h4>
+        <ul style="list-style:none; padding-left:0;">
+          ${updatesHTML}
+        </ul>
+      </div>
+    `;
+  } else {
+    resultDiv.innerHTML = `
+      <div style="background:#fff; padding:20px; margin-top:20px; border-radius:8px;">
+        <p style="color:red;">Tracking number not found.</p>
+      </div>
+    `;
+  }
+}
+
+const form = document.getElementById('contactForm');
+const button = document.getElementById('submitBtn');
+const success = document.getElementById('successMessage');
+
+form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    button.innerHTML = "Sending...";
+    button.disabled = true;
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+        success.style.display = "block";
+        form.reset();
+    } else {
+        alert("There was a problem sending your message.");
+    }
+
+    button.innerHTML = "Send Message";
+    button.disabled = false;
+});
+</script>
+
+</body>
+</html>

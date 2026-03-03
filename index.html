@@ -253,25 +253,18 @@ function trackShipment() {
 
   const shipments = {
     "ITL987654": {
-      status: "Held at Customs",
-      destination: "Kuwait",
-      updates: [
-    "Package received at origin facility – Israel Cargo Seaport",
-    "Departed Israel Cargo Seaport",
-    "Arrived at Kuwait Cargo Seaport",
-    "Held at customs for inspection"
-    },
-    "ITL123456": {
-      status: "In Transit",
-      destination: "Abuja, Nigeria",
-      updates: [
-        "Shipment picked up",
-        "Arrived at sorting facility – Lagos",
-        "Dispatched to Abuja",
-        "Out for delivery"
-      ]
+        status: "Held at Customs",
+        destination: "Kuwait",
+        updates: [
+            "Shipment received at origin facility – Haifa Cargo Seaport, Israel",
+            "Export documentation verified – Israel Customs Authority",
+            "Departed Haifa Cargo Seaport, Israel",
+            "Arrived at Shuwaikh Port, Kuwait",
+            "Under customs inspection – Kuwait Customs Authority",
+            "Status: Held at Customs pending clearance"
+        ]
     }
-  };
+};
 
   if (shipments[trackingNumber]) {
     const shipment = shipments[trackingNumber];

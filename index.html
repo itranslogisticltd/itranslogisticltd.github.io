@@ -209,16 +209,15 @@ function trackShipment() {
 
         const shipment = shipments[trackingNumber];
 
-        let updatesHTML = "<ul style='text-align:left; margin-top:15px;'>";
+        let updatesHTML = <ul style="text-align:left; margin-top:15px;">;
 
         shipment.updates.forEach(update => {
-            updatesHTML += "<li>" + update + "</li>";
+            updatesHTML += <li style="margin-bottom:8px;">✔️ ${update}</li>;
         });
 
         updatesHTML += "</ul>";
-
         resultDiv.innerHTML = `
-            <div style="
+            <div style=" 
                 background:white;
                 color:#333;
                 padding:20px;
@@ -246,38 +245,7 @@ function trackShipment() {
                 Tracking Number Not Found
             </div>
         `;
-    }
-}
-
-if (shipments[trackingNumber]) {
-
-    const shipment = shipments[trackingNumber];
-    let updatesHTML = "";
-
-    shipment.updates.forEach(update => {
-        updatesHTML += <li style="margin-bottom:8px;">✔️ ${update}</li>;
-    });
- 
-    resultDiv.innerHTML = `
-    <div style="background:#fff; padding:25px; margin-top:25px; border-radius:10px; text-align:left;">
-        <h3 style="color:#0b3d91;">Tracking Number: ${trackingNumber}</h3>
-        <p><strong>Status:</strong> ${shipment.status}</p>
-        <p><strong>Destination:</strong> ${shipment.destination}</p>
-        <hr>
-        <h4>Shipment History</h4>
-        <ul style="list-style:none; padding-left:0;">
-            ${updatesHTML}
-        </ul>
-    </div>
-    `;
-
-} else {
-    resultDiv.innerHTML = `
-    <div style="background:#fff; padding:20px; margin-top:20px; border-radius:8px;">
-        <p style="color:red;">Tracking number not found.</p>
-    </div>
-    `;
-}
+    
 }
 </script>
 

@@ -12,357 +12,206 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
+/* Navigation */
 nav {
     background: #0b3d91;
-    padding: 15px;
-    text-align: right;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
     color: white; 
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: #3ea0ff;
 }
 
+/* Header */
 header {
-    background: linear-gradient(to right, #0b3d91, #1976d2);
+    background: linear-gradient(135deg, #0b3d91, #1976d2);
     color: white;
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;  
 }
 
+header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* Sections */
 section {
-    padding: 60px 20px;
+    padding: 80px 10%;
     text-align: center;
 }
 
+/* Services */
 .services-box {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    margin-top: 40px;
 } 
 
-.service {
-    width: 280px;
-}
-
-.service img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-footer {
-    background: #0b3d91;
-    color: white;
+.service-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     padding: 20px;
-    text-align: center;
+    width: 280px;
+    transition: transform 0.3s;
 }
 
-/* Tracking Section Styles */
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Tracking Container */
 .tracking-container {
-    text-align: center;
-    padding: 60px 20px;
-    margin: 50px auto;
-    width: 90%;
-    max-width: 800px;
     background: linear-gradient(145deg, #0d6efd, #3ea0ff);
-    border-radius: 40px;
-    box-shadow: 
-        20px 20px 40px rgba(0,0,0,0.25),
-        -10px -10px 30px rgba(255,255,255,0.3);
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     color: white;
+    max-width: 900px;
+    margin: 50px auto;
 }
 
 .tracking-input-group {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #trackingInput {
-    padding: 15px 20px;
-    width: 300px;
-    max-width: 100%;
+    padding: 15px 25px;
+    width: 350px;
     border-radius: 30px;
     border: none;
-    outline: none;
     font-size: 16px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-}
-
-#trackingInput::placeholder {
-    color: #999;
 }
 
 .track-btn {
-    padding: 15px 35px;
+    padding: 15px 40px;
     border: none;
     border-radius: 30px;
     background: white;
     color: #0d6efd;
     font-weight: bold;
-    font-size: 16px;
     cursor: pointer;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-.track-btn:hover {
-    background: #f0f0f0;
-    transform: translateY(-2px);
-    box-shadow: 7px 7px 20px rgba(0,0,0,0.4);
-}
+.track-btn:hover { background: #f0f0f0; }
 
-.track-btn:active {
-    transform: translateY(0);
-}
-
-.track-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-/* Tracking Result Styles */
-#result {
-    margin-top: 30px;
-    text-align: left;
-}
-
+/* Tracking Result Box */
 .tracking-result-box {
     background: white;
     color: #333;
     border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    padding: 30px;
+    text-align: left;
+    margin-top: 20px;
 }
 
 .tracking-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
     padding-bottom: 15px;
-    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 20px;
 }
 
-.tracking-number {
-    font-size: 18px;
-    font-weight: bold;
-    color: #0b3d91;
-}
-
-.tracking-status {
-    padding: 8px 20px;
+.status-badge {
+    padding: 6px 15px;
     border-radius: 20px;
+    font-size: 0.9rem;
     font-weight: bold;
-    font-size: 14px;
 }
 
-.status-in-transit {
-    background: #fff3cd;
-    color: #856404;
-}
+.status-in-transit { background: #fff3cd; color: #856404; }
 
-.status-delivered {
-    background: #d4edda;
-    color: #155724;
-}
-
-.status-pending {
-    background: #cce5ff;
-    color: #004085;
-}
-
-.status-exception {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-/* Timeline Styles */
+/* Timeline */
 .tracking-timeline {
     position: relative;
-    padding-left: 30px;
+    padding-left: 35px;
+    margin-top: 20px;
 }
 
 .tracking-timeline::before {
     content: '';
     position: absolute;
     left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, #0d6efd, #3ea0ff);
-    border-radius: 3px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: #0d6efd;
 }
 
 .timeline-item {
     position: relative;
-    padding: 15px 0;
-    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 25px;
 }
 
-.timeline-item:last-child {
-    border-bottom: none;
-}
-
-.timeline-item::before {
+.timeline-item::after {
     content: '';
     position: absolute;
-    left: -24px;
-    top: 20px;
+    left: -31px;
+    top: 5px;
     width: 14px;
     height: 14px;
-    background: #0d6efd;
+    background: white;
+    border: 3px solid #0d6efd;
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #0d6efd;
 }
 
-.timeline-item.completed::before {
-    background: #28a745;
-    box-shadow: 0 0 0 3px #28a745;
-}
+.timeline-date { font-size: 0.85rem; color: #777; }
+.timeline-location { font-weight: bold; color: #0b3d91; margin: 2px 0; }
 
-.timeline-item.current::before {
-    background: #ffc107;
-    box-shadow: 0 0 0 3px #ffc107;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-}
-
-.timeline-date {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.timeline-location {
-    font-weight: bold;
-    color: #0b3d91;
-    margin-bottom: 5px;
-}
-
-.timeline-description {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Error Message */
-.error-message {
-    background: #f8d7da;
-    color: #721c24;
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-align: center;
-    animation: shake 0.5s ease;
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-}
-
-/* Loading Spinner */
-.loading-spinner {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 3px solid rgba(255,255,255,0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Contact Form Styles */
-#contact form {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-#contact input,
-#contact textarea {
+/* Contact Form */
+#contact form { max-width: 600px; margin: 0 auto; }
+#contact input, #contact textarea {
     width: 100%;
-    padding: 15px;
-    margin: 10px 0;
+    padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 6px;
 }
 
-#contact textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-#contact button {
-    padding: 15px 40px;
+footer {
     background: #0b3d91;
     color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
+    padding: 30px;
+    margin-top: 50px;
 }
 
-#contact button:hover {
-    background: #1976d2;
-}
-
-/* Responsive */
 @media (max-width: 600px) {
-    .tracking-container {
-        width: 95%;
-        padding: 40px 15px;
-        border-radius: 25px;
-    }
-    
-    #trackingInput {
-        width: 100%;
-    }
-    
-    .track-btn {
-        width: 100%;
-    }
-    
-    .tracking-header {
-        flex-direction: column;
-        text-align: center;
-    }
+    .tracking-input-group { flex-direction: column; }
+    #trackingInput { width: 100%; }
 }
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -377,79 +226,43 @@ footer {
     <p>Reliable • Secure • Global Freight Solutions</p>
 </header>
 
-<!-- IMAGE SECTION AFTER HEADER -->
-    
-<section style="text-align:center; padding:40px; background:linear-gradient(135deg,#e3f2fd,#ffffff);">
-  <div style="
-      display:inline-block;
-      padding:20px;
-      background:white;
-      border-radius:15px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      transform: perspective(1000px) rotateX(5deg);
-  ">
-    <img src="office-packaging.jpg" style="width:60%; max-width:400px; border-radius:10px;">
-  </div>
-</section>
-
 <section id="services">
     <h2>Our Logistics Services</h2>
-
     <div class="services-box">
-
-        <div>
-            <img src="warehousing.jpg" alt="Warehousing" width="300">
+        <div class="service-card">
+            <img src="warehousing.jpg" alt="Warehousing">
             <h3>Warehousing</h3>
             <p>Secure storage and cargo handling services.</p>
         </div>
-
-        <div>
-            <img src="global-freight.jpg" alt="Global Freight" width="300">
+        <div class="service-card">
+            <img src="global-freight.jpg" alt="Global Freight">
             <h3>Global Freight</h3>
             <p>Air, Sea and Land freight solutions worldwide.</p>
         </div>
-
-        <div>
-            <img src="logistics-services.jpg" alt="Logistics Services" width="300">
+        <div class="service-card">
+            <img src="logistics-services.jpg" alt="Logistics">
             <h3>Logistics Solutions</h3>
-            <p>Complete supply chain and delivery management services.</p>
+            <p>Complete supply chain and delivery management.</p>
         </div>
-
-        <div class="service">
-            <img src="company-manager.jpg" width="300" style="border-radius:10px;">
-            <h3>Global Freight</h3>
-            <p>Air, Sea and Land freight solutions worldwide.</p>
-        </div>
-
     </div>
 </section>
 
-<!-- TRACKING SECTION -->
 <section id="tracking" class="tracking-container">
     <h2 style="margin-bottom:25px;">Track Your Shipment</h2>
-
     <div class="tracking-input-group">
         <input type="text" id="trackingInput" placeholder="Enter Tracking Number (e.g., ITR123456789)">
-        <button class="track-btn" onclick="trackShipment()" id="trackBtn">
-            Track
-        </button>
+        <button class="track-btn" onclick="trackShipment()" id="trackBtn">Track</button>
     </div>
-
     <div id="result"></div>
 </section>
 
 <section id="contact">
     <h2>Contact Us</h2>
-
     <form action="https://formsubmit.co/itranslogisticltd@email.com" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-
-        <button type="submit">Send Message</button>
+        <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+        <button type="submit" style="background:#0b3d91; color:white; border:none; padding:15px 40px; cursor:pointer; border-radius:5px; font-weight:bold;">Send Message</button>
     </form>
 </section>
 
@@ -458,92 +271,38 @@ footer {
 </footer>
 
 <script>
-// Mock tracking data for demonstration
 const mockTrackingData = {
     'ITR123456789': {
-        status: 'In Transit',
+        status: 'In Transit - Held in Customs',
         statusClass: 'status-in-transit',
-        origin: 'New York, USA',
-        destination: 'London, UK',
-        estimatedDelivery: 'March 8, 2026',
+        origin: 'Israel',
+        destination: 'Kuwait',
+        estimatedDelivery: 'March 3, 2026',
         updates: [
             {
                 date: 'Mar 4, 2026 - 14:30',
-                location: 'London Heathrow Airport, UK',
-                description: 'Shipment has arrived at destination airport and is being processed through customs.',
-                completed: true
+                location: 'Israel seaport, IS',
+                description: 'Shipment has arrived at destination seaport and is being processed through customs.'
             },
             {
                 date: 'Mar 3, 2026 - 08:15',
                 location: 'In Transit',
-                description: 'Shipment is on flight BA178 from JFK to LHR.',
-                completed: true
+                description: 'Shipment is on Ben Gurion International seaport (TV), 7015002, Israel from Israel to Kuwait.'
             },
             {
                 date: 'Mar 2, 2026 - 22:45',
-                location: 'JFK Airport, New York, USA',
-                description: 'Shipment has been loaded onto the aircraft.',
-                completed: true
+                location: 'Israel',
+                description: 'Shipment has been loaded onto the aircraft.'
             },
             {
                 date: 'Mar 2, 2026 - 16:20',
-                location: 'iTrans Logistics Hub, New York, USA',
-                description: 'Shipment has departed from the facility.',
-                completed: true
+                location: 'iTrans Logistics Ben Gurion International seaport',
+                description: 'Shipment has departed from the facility.'
             },
             {
                 date: 'Mar 2, 2026 - 10:00',
-                location: 'iTrans Logistics Hub, New York, USA',
-                description: 'Shipment has been received and is being processed.',
-                completed: true
-            }
-        ]
-    },
-    'ITR987654321': {
-        status: 'Delivered',
-        statusClass: 'status-delivered',
-        origin: 'Shanghai, China',
-        destination: 'Los Angeles, USA',
-        estimatedDelivery: 'Delivered on March 2, 2026',
-        updates: [
-            {
-                date: 'Mar 2, 2026 - 11:30',
-                location: 'Los Angeles, CA, USA',
-                description: 'Shipment has been delivered. Signed for by: J. SMITH',
-                completed: true
-            },
-            {
-                date: 'Mar 2, 2026 - 07:15',
-                location: 'Los Angeles Distribution Center',
-                description: 'Shipment is out for delivery.',
-                completed: true
-            },
-            {
-                date: 'Mar 1, 2026 - 18:00',
-                location: 'LAX Cargo Terminal, Los Angeles, USA',
-                description: 'Shipment has cleared customs and is ready for delivery.',
-                completed: true
-            },
-            {
-                date: 'Feb 28, 2026 - 09:30',
-                location: 'Shanghai Pudong Airport, China',
-                description: 'Shipment has departed from origin facility.',
-                completed: true
-            }
-        ]
-    },
-    'ITR555666777': {
-        status: 'Pending',
-        statusClass: 'status-pending',
-        origin: 'Dubai, UAE',
-        destination: 'Sydney, Australia',
-        estimatedDelivery: 'March 12, 2026',
-        updates: [
-            {
-                date: 'Mar 4, 2026 - 09:00',
-                location: 'Dubai Logistics Center, UAE',
-                description: 'Label created, awaiting pickup.',
-                completed: false
+                location: 'iTrans Logistics Ben Gurion International (TV)',
+                description: 'Shipment has been received and is being processed.'
             }
         ]
     }
@@ -553,98 +312,47 @@ function trackShipment() {
     const input = document.getElementById('trackingInput');
     const resultDiv = document.getElementById('result');
     const trackBtn = document.getElementById('trackBtn');
-    const trackingNumber = input.value.trim().toUpperCase();
-    
-    // Validate input
-    if (!trackingNumber) {
-        resultDiv.innerHTML = '<div class="error-message">Please enter a tracking number.</div>';
-        return;
-    }
-    
-    // Show loading state
+    const id = input.value.trim().toUpperCase();
+
+    if (!id) return;
+
     trackBtn.disabled = true;
-    trackBtn.innerHTML = '<span class="loading-spinner"></span> Tracking...';
-    resultDiv.innerHTML = '';
-    
-    // Simulate API call delay
+    trackBtn.innerText = 'Searching...';
+
     setTimeout(() => {
-        // Reset button
         trackBtn.disabled = false;
-        trackBtn.innerHTML = 'Track';
+        trackBtn.innerText = 'Track';
         
-        // Check if tracking number exists in mock data
-        const data = mockTrackingData[trackingNumber];
-        
+        const data = mockTrackingData[id];
         if (data) {
-            // Build tracking result HTML
-            let timelineHTML = '';
-            data.updates.forEach((update, index) => {
-                const itemClass = update.completed ? 'completed' : (index === 0 ? 'current' : '');
-                timelineHTML += `
-                    <div class="timeline-item ${itemClass}">
-                        <div class="timeline-date">${update.date}</div>
-                        <div class="timeline-location">${update.location}</div>
-                        <div class="timeline-description">${update.description}</div>
-                    </div>
-                `;
-            });
-            
+            let timeline = data.updates.map(u => `
+                <div class="timeline-item">
+                    <div class="timeline-date">${u.date}</div>
+                    <div class="timeline-location">${u.location}</div>
+                    <div class="timeline-description">${u.description}</div>
+                </div>
+            `).join('');
+
             resultDiv.innerHTML = `
                 <div class="tracking-result-box">
                     <div class="tracking-header">
-                        <div class="tracking-number">Tracking #: ${trackingNumber}</div>
-                        <div class="tracking-status ${data.statusClass}">${data.status}</div>
+                        <span style="font-weight:bold; color:#0b3d91;">Tracking #: ${id}</span>
+                        <span class="status-badge ${data.statusClass}">${data.status}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
-                        <div>
-                            <strong>Origin:</strong> ${data.origin}
-                        </div>
-                        <div>
-                            <strong>Destination:</strong> ${data.destination}
-                        </div>
-                        <div>
-                            <strong>${data.status === 'Delivered' ? 'Delivered:' : 'Estimated Delivery:'}</strong> ${data.estimatedDelivery}
-                        </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; background:#f9f9f9; padding:15px; border-radius:10px; margin-bottom:20px;">
+                        <div><strong>Origin:</strong> ${data.origin}</div>
+                        <div><strong>Destination:</strong> ${data.destination}</div>
+                        <div style="grid-column: span 2;"><strong>Estimated Delivery:</strong> ${data.estimatedDelivery}</div>
                     </div>
-                    <h3 style="margin-bottom: 15px; color: #0b3d91;">Shipment Progress</h3>
-                    <div class="tracking-timeline">
-                        ${timelineHTML}
-                    </div>
+                    <h4 style="margin:0 0 15px 0; color:#0b3d91;">Shipment Progress</h4>
+                    <div class="tracking-timeline">${timeline}</div>
                 </div>
             `;
         } else {
-            // Generate random tracking data for unknown numbers
-            const randomStatus = ['In Transit', 'Delivered', 'Pending'][Math.floor(Math.random() * 3)];
-            const statusClasses = {
-                'In Transit': 'status-in-transit',
-                'Delivered': 'status-delivered',
-                'Pending': 'status-pending'
-            };
-            
-            resultDiv.innerHTML = `
-                <div class="tracking-result-box">
-                    <div class="tracking-header">
-                        <div class="tracking-number">Tracking #: ${trackingNumber}</div>
-                        <div class="tracking-status ${statusClasses[randomStatus]}">${randomStatus}</div>
-                    </div>
-                    <div style="padding: 20px; background: #fff3cd; border-radius: 10px; text-align: center;">
-                        <p style="margin: 0; color: #856404;">
-                            <strong>Note:</strong> This tracking number was not found in our demo database.<br>
-                            Try these demo tracking numbers: <strong>ITR123456789</strong>, <strong>ITR987654321</strong>, or <strong>ITR555666777</strong>
-                        </p>
-                    </div>
-                </div>
-            `;
+            resultDiv.innerHTML = '<div style="background:#fff; color:red; padding:20px; border-radius:10px;">Tracking number not found.</div>';
         }
-    }, 1500);
+    }, 800);
 }
-
-// Allow Enter key to trigger tracking
-document.getElementById('trackingInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        trackShipment();
-    }
-});
 </script>
 
 </body>

@@ -12,206 +12,257 @@
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: Arial, sans-serif;
 }
 
-/* Navigation */
 nav {
     background: #0b3d91;
-    padding: 15px 5%;
-    display: flex;
-    justify-content: flex-end;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 15px;
+    text-align: right;
 }
 
 nav a {
     color: white; 
-    margin-left: 25px;
+    margin-left: 20px;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+    font-weight: bold;
 }
 
 nav a:hover {
     color: #3ea0ff;
 }
 
-/* Header */
 header {
-    background: linear-gradient(135deg, #0b3d91, #1976d2);
+    background: linear-gradient(to right, #0b3d91, #1976d2);
     color: white;
-    padding: 100px 20px;
+    padding: 80px 20px;
     text-align: center;  
 }
 
-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-
-/* Sections */
 section {
-    padding: 80px 10%;
+    padding: 60px 20px;
     text-align: center;
 }
 
-/* Services */
 .services-box {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    margin-top: 40px;
 } 
 
-.service-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    padding: 20px;
+.service {
     width: 280px;
-    transition: transform 0.3s;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card img {
+.service img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
 }
 
-/* Tracking Container */
-.tracking-container {
-    background: linear-gradient(145deg, #0d6efd, #3ea0ff);
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+footer {
+    background: #0b3d91;
     color: white;
-    max-width: 900px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Tracking Section Styles */
+.tracking-container {
+    text-align: center;
+    padding: 60px 20px;
     margin: 50px auto;
+    width: 90%;
+    max-width: 800px;
+    background: linear-gradient(145deg, #0d6efd, #3ea0ff);
+    border-radius: 40px;
+    box-shadow: 
+        20px 20px 40px rgba(0,0,0,0.25),
+        -10px -10px 30px rgba(255,255,255,0.3);
+    color: white;
 }
 
 .tracking-input-group {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #trackingInput {
-    padding: 15px 25px;
-    width: 350px;
+    padding: 15px 20px;
+    width: 300px;
+    max-width: 100%;
     border-radius: 30px;
     border: none;
+    outline: none;
     font-size: 16px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#trackingInput::placeholder {
+    color: #999;
 }
 
 .track-btn {
-    padding: 15px 40px;
+    padding: 15px 35px;
     border: none;
     border-radius: 30px;
     background: white;
     color: #0d6efd;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
 }
 
-.track-btn:hover { background: #f0f0f0; }
+.track-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 7px 7px 20px rgba(0,0,0,0.4);
+}
 
-/* Tracking Result Box */
+/* Tracking Result Styles */
+#result {
+    margin-top: 30px;
+    text-align: left;
+}
+
 .tracking-result-box {
     background: white;
     color: #333;
     border-radius: 20px;
-    padding: 30px;
-    text-align: left;
-    margin-top: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .tracking-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
     margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
 }
 
-.status-badge {
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+.tracking-number {
+    font-size: 18px;
     font-weight: bold;
+    color: #0b3d91;
 }
 
-.status-in-transit { background: #fff3cd; color: #856404; }
+.tracking-status {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
 
-/* Timeline */
+.status-in-transit {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Timeline Styles */
 .tracking-timeline {
     position: relative;
-    padding-left: 35px;
-    margin-top: 20px;
+    padding-left: 30px;
 }
 
 .tracking-timeline::before {
     content: '';
     position: absolute;
     left: 10px;
-    top: 5px;
-    bottom: 5px;
-    width: 2px;
-    background: #0d6efd;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #0d6efd, #3ea0ff);
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 25px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.timeline-item::after {
+.timeline-item::before {
     content: '';
     position: absolute;
-    left: -31px;
-    top: 5px;
+    left: -24px;
+    top: 20px;
     width: 14px;
     height: 14px;
-    background: white;
-    border: 3px solid #0d6efd;
+    background: #0d6efd;
     border-radius: 50%;
+    border: 3px solid white;
 }
 
-.timeline-date { font-size: 0.85rem; color: #777; }
-.timeline-location { font-weight: bold; color: #0b3d91; margin: 2px 0; }
+.timeline-date {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+}
 
-/* Contact Form */
-#contact form { max-width: 600px; margin: 0 auto; }
-#contact input, #contact textarea {
+.timeline-location {
+    font-weight: bold;
+    color: #0b3d91;
+}
+
+.timeline-description {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Contact Form Styles */
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 15px;
+    margin: 10px 0;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
-footer {
+#contact button {
+    padding: 15px 40px;
     background: #0b3d91;
     color: white;
-    padding: 30px;
-    margin-top: 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    .tracking-input-group { flex-direction: column; }
-    #trackingInput { width: 100%; }
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -226,23 +277,29 @@ footer {
     <p>Reliable • Secure • Global Freight Solutions</p>
 </header>
 
+<section style="text-align:center; padding:40px; background:linear-gradient(135deg,#e3f2fd,#ffffff);">
+  <div style="display:inline-block; padding:20px; background:white; border-radius:15px; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+    <img src="office-packaging.jpg" style="width:60%; max-width:400px; border-radius:10px;">
+  </div>
+</section>
+
 <section id="services">
     <h2>Our Logistics Services</h2>
     <div class="services-box">
-        <div class="service-card">
+        <div class="service">
             <img src="warehousing.jpg" alt="Warehousing">
             <h3>Warehousing</h3>
             <p>Secure storage and cargo handling services.</p>
         </div>
-        <div class="service-card">
+        <div class="service">
             <img src="global-freight.jpg" alt="Global Freight">
             <h3>Global Freight</h3>
             <p>Air, Sea and Land freight solutions worldwide.</p>
         </div>
-        <div class="service-card">
-            <img src="logistics-services.jpg" alt="Logistics">
+        <div class="service">
+            <img src="logistics-services.jpg" alt="Logistics Services">
             <h3>Logistics Solutions</h3>
-            <p>Complete supply chain and delivery management.</p>
+            <p>Complete supply chain and delivery management services.</p>
         </div>
     </div>
 </section>
@@ -250,7 +307,7 @@ footer {
 <section id="tracking" class="tracking-container">
     <h2 style="margin-bottom:25px;">Track Your Shipment</h2>
     <div class="tracking-input-group">
-        <input type="text" id="trackingInput" placeholder="Enter Tracking Number (e.g., ITR123456789)">
+        <input type="text" id="trackingInput" placeholder="Enter Tracking Number">
         <button class="track-btn" onclick="trackShipment()" id="trackBtn">Track</button>
     </div>
     <div id="result"></div>
@@ -261,8 +318,8 @@ footer {
     <form action="https://formsubmit.co/itranslogisticltd@email.com" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
-        <button type="submit" style="background:#0b3d91; color:white; border:none; padding:15px 40px; cursor:pointer; border-radius:5px; font-weight:bold;">Send Message</button>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
     </form>
 </section>
 
@@ -273,7 +330,7 @@ footer {
 <script>
 const mockTrackingData = {
     'ITR123456789': {
-        status: 'In Transit - Held in Customs',
+        status: 'In Transit',
         statusClass: 'status-in-transit',
         origin: 'Israel',
         destination: 'Kuwait',
@@ -285,14 +342,14 @@ const mockTrackingData = {
                 description: 'Shipment has arrived at destination seaport and is being processed through customs.'
             },
             {
-                date: 'Mar 3, 2026 - 08:15',
+                date: 'Mar 2, 2026 - 08:15',
                 location: 'In Transit',
                 description: 'Shipment is on Ben Gurion International seaport (TV), 7015002, Israel from Israel to Kuwait.'
             },
             {
                 date: 'Mar 2, 2026 - 22:45',
                 location: 'Israel',
-                description: 'Shipment has been loaded onto the aircraft.'
+                description: 'Shipment has been loaded onto the cargo.'
             },
             {
                 date: 'Mar 2, 2026 - 16:20',
@@ -300,7 +357,7 @@ const mockTrackingData = {
                 description: 'Shipment has departed from the facility.'
             },
             {
-                date: 'Mar 2, 2026 - 10:00',
+                date: 'Feb 28, 2026 - 10:00',
                 location: 'iTrans Logistics Ben Gurion International (TV)',
                 description: 'Shipment has been received and is being processed.'
             }
@@ -313,19 +370,19 @@ function trackShipment() {
     const resultDiv = document.getElementById('result');
     const trackBtn = document.getElementById('trackBtn');
     const id = input.value.trim().toUpperCase();
-
+    
     if (!id) return;
-
+    
     trackBtn.disabled = true;
-    trackBtn.innerText = 'Searching...';
-
+    trackBtn.innerHTML = '<span class="loading-spinner"></span> Tracking...';
+    
     setTimeout(() => {
         trackBtn.disabled = false;
-        trackBtn.innerText = 'Track';
-        
+        trackBtn.innerHTML = 'Track';
         const data = mockTrackingData[id];
+        
         if (data) {
-            let timeline = data.updates.map(u => `
+            let timelineHTML = data.updates.map(u => `
                 <div class="timeline-item">
                     <div class="timeline-date">${u.date}</div>
                     <div class="timeline-location">${u.location}</div>
@@ -336,25 +393,23 @@ function trackShipment() {
             resultDiv.innerHTML = `
                 <div class="tracking-result-box">
                     <div class="tracking-header">
-                        <span style="font-weight:bold; color:#0b3d91;">Tracking #: ${id}</span>
-                        <span class="status-badge ${data.statusClass}">${data.status}</span>
+                        <div class="tracking-number">Tracking #: ${id}</div>
+                        <div class="tracking-status ${data.statusClass}">${data.status}</div>
                     </div>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; background:#f9f9f9; padding:15px; border-radius:10px; margin-bottom:20px;">
+                    <div style="display: flex; justify-content: space-between; gap: 10px; margin-bottom: 20px; background: #f8f9fa; padding: 15px; border-radius: 10px; font-size: 14px;">
                         <div><strong>Origin:</strong> ${data.origin}</div>
                         <div><strong>Destination:</strong> ${data.destination}</div>
-                        <div style="grid-column: span 2;"><strong>Estimated Delivery:</strong> ${data.estimatedDelivery}</div>
+                        <div><strong>Est. Delivery:</strong> ${data.estimatedDelivery}</div>
                     </div>
-                    <h4 style="margin:0 0 15px 0; color:#0b3d91;">Shipment Progress</h4>
-                    <div class="tracking-timeline">${timeline}</div>
+                    <h3 style="margin-bottom: 15px; color: #0b3d91;">Shipment Progress</h3>
+                    <div class="tracking-timeline">${timelineHTML}</div>
                 </div>
             `;
         } else {
-            resultDiv.innerHTML = '<div style="background:#fff; color:red; padding:20px; border-radius:10px;">Tracking number not found.</div>';
+            resultDiv.innerHTML = '<div style="color:white; text-align:center;">Tracking number not found.</div>';
         }
-    }, 800);
+    }, 1000);
 }
 </script>
-
 </body>
 </html>
-

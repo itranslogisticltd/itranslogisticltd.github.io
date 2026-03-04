@@ -1,197 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iTrans Logistics Ltd</title>
-
-<style>
-body {
-    margin:0;
-    font-family: Arial, sans-serif;
-}
-
-nav {
-    background:#0b3d91;
-    padding:15px;
-    text-align:right;
-}
-
-nav a {
-    color:white; 
-    margin-left:20px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-header {
-    background: linear-gradient(to right,#0b3d91,#1976d2);
-    color:white;
-    padding:80px 20px;
-    text-align:center;  
-}
-
-section {
-    padding:60px 20px;
-    text-align:center;
-}
-
-.services-box {
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-} 
-
-.service {
-    width:280px;
-}
-
-.service img {
-    width:100%;
-    border-radius:8px;
-}
-
-footer {
-    background:#0b3d91;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#tracking">Tracking</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<header id="home">
-<h1>iTrans Logistics Ltd</h1>
-<p>Reliable • Secure • Global Freight Solutions</p>
-</header>
-
-<!-- IMAGE SECTION AFTER HEADER -->
-    
-<section style="text-align:center; padding:40px; background:linear-gradient(135deg,#e3f2fd,#ffffff);">
-  <div style="
-      display:inline-block;
-      padding:20px;
-      background:white;
-      border-radius:15px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      transform: perspective(1000px) rotateX(5deg);
-  ">
-    <img src="office-packaging.jpg" style="width:60%; max-width:400px; border-radius:10px;">
-  </div>
-</section>
-
-<section id="services">
-<h2>Our Logistics Services</h2>
-
-<div class="services-box">
-
-<div>
-  <img src="warehousing.jpg" alt="Warehousing" width="300">
-  <h3>Warehousing</h3>
-  <p>Secure storage and cargo handling services.</p>
-</div>
-
-<div>
-  <img src="global-freight.jpg" alt="Global Freight" width="300">
-  <h3>Global Freight</h3>
-  <p>Air, Sea and Land freight solutions worldwide.</p>
-</div>
-
-<div>
-  <img src="logistics-services.jpg" alt="Logistics Services" width="300">
-  <h3>Logistics Solutions</h3>
-  <p>Complete supply chain and delivery management services.</p>
-</div>
-
-<div class="service">
-<img src="company-manager.jpg" width="300" style="border-radius:10px;">
-<h3>Global Freight</h3>
-<p>Air, Sea and Land freight solutions worldwide.</p>
-</div>
-
-</div>
-</section>
-
-<section style="
-    text-align:center;
-    padding:60px 20px;
-    margin:50px auto;
-    width:80%;
-    background: linear-gradient(145deg, #0d6efd, #3ea0ff);
-    border-radius:40px;
-    box-shadow: 
-        20px 20px 40px rgba(0,0,0,0.25),
-        -10px -10px 30px rgba(255,255,255,0.3);
-    color:white;
-">
-
-    <h2 style="margin-bottom:25px;">Track Your Shipment</h2>
-
-    <input 
-    type="text" 
-    id="trackingInput" 
-    placeholder="Enter Tracking Number"
-    style="
-        padding:12px;
-        width:250px;
-        border-radius:25px;
-        border:none;
-        outline:none;
-        margin-right:10px;
-    "
->
-
-    <button onclick="trackShipment()" style=" 
-            padding:12px 25px;
-            border:none;
-            border-radius:25px;
-            background:white;
-            color:#0d6efd;
-            font-weight:bold;
-            cursor:pointer;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-        ">
-        Track
-    </button>
-
-    <div id="result" style="margin-top:20px;"></div>
-
-</section>
-
-<section id="contact">
-<h2>Contact Us</h2>
-
-<form action="https://formsubmit.co/itranslogisticltd@email.com" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Message" required></textarea>
- 
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-
-<button type="submit">Send Message</button>
-</form>
 
 </section>
 
 <footer>
 © 2026 iTrans Logistics Ltd | International Shipping Experts
 </footer>
+
 <script>
 function trackShipment() {
 
     const trackingNumber = document.getElementById("trackingInput").value.trim().toUpperCase();
-
     const resultDiv = document.getElementById("result");
 
     const shipments = {
@@ -219,9 +37,10 @@ function trackShipment() {
             updatesHTML += <li style="margin-bottom:8px;">✔️ ${update}</li>;
         });
 
-        updatesHTML += "</ul>";
+        updatesHTML += </ul>;
+
         resultDiv.innerHTML = `
-            <div style=" 
+            <div style="
                 background:white;
                 color:#333;
                 padding:20px;
@@ -249,9 +68,9 @@ function trackShipment() {
                 Tracking Number Not Found
             </div>
         `;
-    
+    }
 }
 </script>
 
 </body>
-</html> 
+</html>
